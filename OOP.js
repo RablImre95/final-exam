@@ -1,13 +1,19 @@
 class Resident {
   constructor(name, age, hasRegistered) {
-    //write your code here
+    this.name = name;
+    this.age = age;
+    this.hasRegistered = hasRegistered;
   }
 
-  //also here
+  canVote() {
+    return this.age >= 18 && this.hasRegistered
+  }
 }
 
 class VotingPeople {
-  //and even here
+  static getNumberOfVoters(residents) {
+      return residents.filter(resident => resident.canVote()).length
+  }
 }
 
 
